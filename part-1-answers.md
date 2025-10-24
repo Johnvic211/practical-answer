@@ -7,9 +7,9 @@
 - First I will check the front-end part, to see the behavior once I click the submit, because it could be caused by the validation of the frontend or the button doesn’t really do anything. There are times that JS is not properly loaded so I have to check that first. If the error is not caused by any of it, then I will try to submit to see in the Network tab if the API is returning anything (response). If none, then it means that either the URL is incorrect or it is inaccessible. Sometimes the error is caused by the browser, so I will try accessing it to different browsers like Chrome, Edge, Safari, and etc. Next, I will check the logs if there are any uncaught errors.
 - After the front-end part, if I still didn’t identify the error, I will try recreating the request through Postman using the same payload and headers collected from the Network tab.
 - From the response of the Postman I should be able to somehow see the error because the result from Postman and Browser can be different.
-- Next I will check the Backend or the server. In Laravel I can check the larave.log, or even the hosting provider.
+- Next I will check the Backend or the server. In Laravel I can check the laravel.log, or even the hosting provider.
 - Next I will check the code to verify if the backend receives the request, sometimes the validation failures, thrown errors, or database errors are not being thrown correctly. Sometimes the empty responses can be mishandled by the front-end.
-- So backend your goal is to make sure that it reaches the last end of your code or program, because if not then the error is in the backend.
+- So in the your goal is to make sure that it reaches the last line of your code or program, because if not then the error is in the backend.
 - Sometimes I use dd() in laravel to check the data and request flow.
 - After all the steps I should be able to identify the error and come up with a solution. The important thing here is to get the error code or message so you could also research it because most of the time it has already been encountered by many developers.
 
@@ -39,8 +39,8 @@
 - ‘first_name’ => ‘required|string|max:255’, //the 255 depends on the DB length
 - ‘last_name’ => ‘required|string|max:255’,
 - ‘birthdate’ => ‘required|date’,
-- ‘country’ => ‘required|string|in:country,id’, //id or name
-- ‘email_address’ => ‘required|email|string|unique:users,email’,
+- ‘country’ => ‘required|string’,
+- ‘email_address’ => ‘required|email|string|unique:customer,email’,
 - ‘mobile_number’ => ‘required|regex:/^09\d{9}$/’
 
 ## How will you present the error message to the user
