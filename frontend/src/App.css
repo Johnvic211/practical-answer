@@ -1,0 +1,39 @@
+#overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal {
+  background-color: black;
+  color: white;
+  padding: 0 2rem 2rem 2rem;
+  border-radius: 10px;
+  text-align: center; 
+}
+
+#closeBtn {
+  border: none;
+  color: white;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: red;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 20px;  
+}
+
+#badge {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: gray;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: larger;
+}
