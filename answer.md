@@ -22,26 +22,26 @@
 
 ### Provide front-end validations (Using zod)
 
-username: z.string().readonly(),
-firstname: z.string().min(1, ‘First name is required’),
-lastname: z.string().min(1, ‘Last name is required’),
-birthdate: z.string(),
-.min(1, ‘Birthdate is required’),
-.refine((val) => !isNaN(Date.parse(val)), ‘Invalid date’),
-.refine((val) => new Date(val) < new Date(), ‘BIrthdate must be in the past’),
-country: z.string().min(1, ‘Country is required’),
-email: z.string().min(1, ‘Email is required’).email.(‘Invalid email format’),
-mobile: z.string().min(1, ‘Mobile number is required’).regex(/^09\d{9}$/, ‘Invalid PH number’) //regex can be used if necessary, especially if its just from PH.
+- username: z.string().readonly(),
+- firstname: z.string().min(1, ‘First name is required’),
+- lastname: z.string().min(1, ‘Last name is required’),
+- birthdate: z.string(),
+  .min(1, ‘Birthdate is required’),
+  .refine((val) => !isNaN(Date.parse(val)), ‘Invalid date’),
+  .refine((val) => new Date(val) < new Date(), ‘BIrthdate must be in the past’),
+- country: z.string().min(1, ‘Country is required’),
+- email: z.string().min(1, ‘Email is required’).email.(‘Invalid email format’),
+- mobile: z.string().min(1, ‘Mobile number is required’).regex(/^09\d{9}$/, ‘Invalid PH number’) //regex can be used if necessary, especially if its just from PH.
 
 ### Provide back-end validations (Laravel)
 
-‘username’ => ‘required|string’,
-‘first_name’ => ‘required|string|max:255’, //the 255 depends on the DB length
-‘last_name’ => ‘required|string|max:255’,
-‘birthdate’ => ‘required|date’,
-‘country’ => ‘required|string|in:country,id’, //id or name
-‘email_address’ => ‘required|email|string|unique:users,email’,
-‘mobile_number’ => ‘required|regex:/^09\d{9}$/’
+- ‘username’ => ‘required|string’,
+- ‘first_name’ => ‘required|string|max:255’, //the 255 depends on the DB length
+- ‘last_name’ => ‘required|string|max:255’,
+- ‘birthdate’ => ‘required|date’,
+- ‘country’ => ‘required|string|in:country,id’, //id or name
+- ‘email_address’ => ‘required|email|string|unique:users,email’,
+- ‘mobile_number’ => ‘required|regex:/^09\d{9}$/’
 
 ## How will you present the error message to the user
 
